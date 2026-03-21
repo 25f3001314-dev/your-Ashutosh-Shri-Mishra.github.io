@@ -7,6 +7,121 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- View CV Sidebar -->
+    <aside class="cv-sidebar" id="cvSidebar">
+        <button class="cv-sidebar-toggle" id="openCVModal" aria-label="Open CV page">
+            VIEW CV
+        </button>
+        <div class="cv-sidebar-panel" id="cvSidebarPanel" aria-hidden="true">
+            <h3>Data Scientist</h3>
+            <p>Ashutosh Shri Mishra</p>
+            <button class="cv-action-btn" id="openCVModalPanel">Open CV</button>
+            <a href="https://docs.google.com/document/d/1_sRSuSNcMUZ4t0fI2Nb7o-_vWIOdeecU/edit?usp=sharing&amp;ouid=102197983532315464022&amp;rtpof=true&amp;sd=true" class="cv-action-btn cv-action-secondary" target="_blank" rel="noopener noreferrer">Google Doc</a>
+        </div>
+    </aside>
+
+    <!-- CV Modal -->
+    <div class="cv-modal-overlay" id="cvModalOverlay">
+        <div class="cv-modal" id="cvModal">
+            <button class="cv-modal-close" id="closeCVModal" aria-label="Close CV modal">✕</button>
+            
+            <div class="cv-wrap">
+                <header class="cv-header">
+                    <h1>RESEARCHER &amp; DATA SCIENCE STUDENT</h1>
+                    <p>
+                        Email: <a href="mailto:shivomkatyyan@gmail.com">shivomkatyyan@gmail.com</a> |
+                        Phone: +91-9450194483 |
+                        LinkedIn: <a href="https://www.linkedin.com/in/ashutosh-shri-mishra/" target="_blank" rel="noopener noreferrer">ashutosh-shri-mishra</a> |
+                        GitHub: <a href="https://github.com/25f3001314-dev" target="_blank" rel="noopener noreferrer">25f3001314-dev</a>
+                    </p>
+                </header>
+
+                <main class="cv-main">
+                    <section class="section">
+                        <h2>Professional Summary</h2>
+                        <p>
+                            Passionate student developer and aspiring data scientist focused on building meaningful applications and exploring innovative technologies. With a strong foundation in computer science and practical research experience, I combine academic learning with hands-on project development. Dedicated to creating elegant solutions to complex problems through data-driven insights and rigorous analysis.
+                        </p>
+                    </section>
+
+                    <section class="section">
+                        <h2>Education</h2>
+                        <h3>Bachelor of Technology in Computer Science</h3>
+                        <p class="meta">Indian Institute of Technology Madras | Expected Graduation: 2029</p>
+                        <p>GPA: 7.9</p>
+                        <p>Relevant Coursework: Machine Learning, Data Analysis, Statistics, Algorithms, Database Systems</p>
+                    </section>
+
+                    <section class="section">
+                        <h2>Technical Skills</h2>
+                        <h3>Programming Languages</h3>
+                        <p>Python (NumPy, Pandas, Scikit-learn, TensorFlow), SQL, JavaScript, Java, R</p>
+                        <h3>Data Science &amp; ML</h3>
+                        <p>Statistical Analysis, Machine Learning (Supervised &amp; Unsupervised), Deep Learning, Data Visualization (Matplotlib, Seaborn, Plotly), Feature Engineering</p>
+                        <h3>Web Development &amp; Tools</h3>
+                        <p>HTML/CSS, React.js, Node.js, Git, Jupyter Notebooks, Excel, Tableau</p>
+                    </section>
+
+                    <section class="section">
+                        <h2>Research &amp; Projects</h2>
+                        <h3>Research Project: [Project Title]</h3>
+                        <p class="meta">[Research Focus Area] | [Timeframe]</p>
+                        <ul>
+                            <li>Conducted comprehensive analysis on [research topic], utilizing [methodologies] to derive insights.</li>
+                            <li>Developed predictive models achieving [accuracy/metrics], with results documented in research papers.</li>
+                            <li>Published findings in [conference/journal], demonstrating impact in the field.</li>
+                        </ul>
+                        <h3 style="margin-top: 10px;">Web Application Development</h3>
+                        <ul>
+                            <li>Built responsive web applications using React.js with modern UI/UX principles.</li>
+                            <li>Integrated backend APIs and databases, ensuring scalable and efficient solutions.</li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2>Professional Experience</h2>
+                        <h3>Research Assistant</h3>
+                        <p class="meta">IIT BHU | 2026</p>
+                        <ul>
+                            <li>Supported research initiatives by collecting, cleaning, and analyzing large datasets.</li>
+                            <li>Collaborated with senior researchers to implement and evaluate machine learning algorithms.</li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2>Certifications &amp; Achievements</h2>
+                        <ul>
+                            <li>Google Data Analytics Certificate</li>
+                            <li>Andrew Ng's Machine Learning Specialization (Coursera)</li>
+                            <li>Winner of Statistella, IIT Bombay Techfest</li>
+                            <li>Insityfty Lucknow IIM</li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2>Open Source &amp; Community</h2>
+                        <ul>
+                            <li>Active contributor to open-source projects with merged pull requests.</li>
+                            <li>Technical blogger sharing insights on data science and web development (Medium, Dev.to).</li>
+                            <li>Mentoring fellow students in programming and data science fundamentals.</li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2>Interests</h2>
+                        <div class="pill-list">
+                            <span class="pill">Machine Learning &amp; AI Applications</span>
+                            <span class="pill">Data Science</span>
+                            <span class="pill">Full-Stack Development</span>
+                            <span class="pill">Open Source Contribution</span>
+                            <span class="pill">Technical Writing</span>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-logo">ASHUTOSH SHRI MISHRA</div>
@@ -36,7 +151,7 @@
                 <p>When I'm not coding, I enjoy contributing to open-source projects, writing technical blogs, and mentoring fellow students interested in technology.</p>
             </div>
             <div class="about-avatar">
-                <img src="images/profile.jpg" alt="Ashutosh Shri Mishra - Profile Photo">
+                <img src="https://picsum.photos/id/1005/700/900" alt="Ashutosh Shri Mishra - Profile Photo">
             </div>
         </div>
     </section>
@@ -49,7 +164,7 @@
             <!-- Project 1: E-Commerce Platform -->
             <div class="project-card">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/800x500?text=E-Commerce+Platform" alt="E-Commerce Platform">
+                    <img src="https://picsum.photos/id/180/800/500" alt="E-Commerce Platform">
                 </div>
                 <div class="project-info">
                     <div class="project-title">E-Commerce Platform</div>
@@ -66,7 +181,7 @@
             <!-- Project 2: Smart Vyapar -->
             <div class="project-card">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/800x500?text=Smart+Vyapar" alt="Smart Vyapar">
+                    <img src="https://picsum.photos/id/3/800/500" alt="Smart Vyapar">
                 </div>
                 <div class="project-info">
                     <div class="project-title">Smart Vyapar</div>
@@ -83,7 +198,7 @@
             <!-- Project 3: AI Assistant Bot -->
             <div class="project-card">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/800x500?text=AI+Assistant+Bot" alt="AI Assistant Bot">
+                    <img src="https://picsum.photos/id/366/800/500" alt="AI Assistant Bot">
                 </div>
                 <div class="project-info">
                     <div class="project-title">AI Assistant Bot</div>

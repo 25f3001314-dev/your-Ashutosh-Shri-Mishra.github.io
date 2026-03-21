@@ -162,3 +162,98 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 });
 
 console.log('Portfolio website loaded successfully!');
+
+// View CV sidebar toggle
+const cvSidebar = document.getElementById('cvSidebar');
+const cvSidebarToggle = document.getElementById('openCVModal'); // The VIEW CV tab button
+const cvSidebarPanel = document.getElementById('cvSidebarPanel');
+
+// CV Modal functionality
+const cvModalOverlay = document.getElementById('cvModalOverlay');
+const cvModal = document.getElementById('cvModal');
+const openCVModalBtn = document.getElementById('openCVModal');
+const openCVModalPanelBtn = document.getElementById('openCVModalPanel');
+const closeCVModalBtn = document.getElementById('closeCVModal');
+
+
+// Sidebar panel toggle logic
+if (cvSidebarToggle && cvSidebarPanel && cvSidebar) {
+    let panelOpen = false;
+    cvSidebarToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        panelOpen = !panelOpen;
+        if (panelOpen) {
+            cvSidebar.classList.add('modal-open');
+            cvSidebarPanel.setAttribute('aria-hidden', 'false');
+        } else {
+            cvSidebar.classList.remove('modal-open');
+            cvSidebarPanel.setAttribute('aria-hidden', 'true');
+        }
+    });
+    // Optional: close panel if user clicks outside panel (desktop only)
+    document.addEventListener('click', (e) => {
+        if (panelOpen && !cvSidebar.contains(e.target)) {
+            panelOpen = false;
+            cvSidebar.classList.remove('modal-open');
+            cvSidebarPanel.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
+
+// Open CV button inside panel opens modal
+if (openCVModalPanelBtn) {
+    openCVModalPanelBtn.addEventListener('click', (e) => {
+        // Panel ko close karo
+        panelOpen = false;
+        cvSidebar.classList.remove('modal-open');
+        cvSidebarPanel.setAttribute('aria-hidden', 'true');
+        // Modal open karo
+        openCVModal();
+    });
+}
+
+if (openCVModalPanelBtn) {
+    openCVModalPanelBtn.addEventListener('click', () => {
+        openCVModal();
+    });
+}
+
+if (closeCVModalBtn) {
+    closeCVModalBtn.addEventListener('click', () => {
+        closeCVModal();
+    });
+}
+
+if (cvModalOverlay) {
+    // Close modal when clicking on overlay background
+    cvModalOverlay.addEventListener('click', (event) => {
+        if (event.target === cvModalOverlay) {
+            closeCVModal();
+        }
+    });
+}
+
+// Keyboard escape key to close modal
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && cvModalOverlay && cvModalOverlay.classList.contains('open')) {
+        closeCVModal();
+    }
+});
+
+function openCVModal() {
+    if (cvModalOverlay) {
+        cvModalOverlay.classList.add('open');
+        document.body.classList.add('modal-open');
+        cvModal.focus();
+    }
+}
+
+function closeCVModal() {
+    if (cvModalOverlay) {
+        cvModalOverlay.classList.remove('open');
+        document.body.classList.remove('modal-open');
+        if (openCVModalBtn) {
+            openCVModalBtn.focus();
+        }
+    }
+}
