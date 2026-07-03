@@ -175,10 +175,14 @@ const openCVModalBtn = document.getElementById('openCVModal');
 const openCVModalPanelBtn = document.getElementById('openCVModalPanel');
 const closeCVModalBtn = document.getElementById('closeCVModal');
 
+let panelOpen = false;
+
+if (cvModal) {
+    cvModal.setAttribute('tabindex', '-1');
+}
 
 // Sidebar panel toggle logic
 if (cvSidebarToggle && cvSidebarPanel && cvSidebar) {
-    let panelOpen = false;
     cvSidebarToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         panelOpen = !panelOpen;
@@ -202,18 +206,10 @@ if (cvSidebarToggle && cvSidebarPanel && cvSidebar) {
 
 // Open CV button inside panel opens modal
 if (openCVModalPanelBtn) {
-    openCVModalPanelBtn.addEventListener('click', (e) => {
-        // Panel ko close karo
+    openCVModalPanelBtn.addEventListener('click', () => {
         panelOpen = false;
         cvSidebar.classList.remove('modal-open');
         cvSidebarPanel.setAttribute('aria-hidden', 'true');
-        // Modal open karo
-        openCVModal();
-    });
-}
-
-if (openCVModalPanelBtn) {
-    openCVModalPanelBtn.addEventListener('click', () => {
         openCVModal();
     });
 }
